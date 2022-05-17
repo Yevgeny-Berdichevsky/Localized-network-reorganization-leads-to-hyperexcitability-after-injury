@@ -1,0 +1,15 @@
+Software Requirements:
+
+- Matlab installed
+
+Versions the scripts were tested on:
+- Matlab R2020b
+- Windows 10
+
+Installation guide:
+- no installation is necessary
+
+Instructions for use:
+- make sure response_function_arr.m is in Matlab's path
+- open single_network_stimulated.m or coupled_large_small_network_noise.m
+- instructions are in the comments at the top of the .m files
