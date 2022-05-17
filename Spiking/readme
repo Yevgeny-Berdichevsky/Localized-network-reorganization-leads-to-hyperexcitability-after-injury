@@ -1,0 +1,16 @@
+NetworkBuilder creates the geometry of the neuronal network. User can define input parameters as desired in this file. The default values are set as described in the paper and subsequent changes might be required upon changes to the inputs. The function will save the network geometries as matrices in separate .mat files.
+The 'NetworkBuilder' calls upon 5 main functions:
+1. ParticleSampleSphere: places nodes with approximately equal distances over the surface of a sphere
+2. ArcDistCalc: calculates the arc distances between nodes and creates sigmoid probability distributions based on distances
+3. ConnDev: creates the connections between nodes in the intact sphere
+4. rmvnodedge: removes the desired number of nodes and their following connections as well as the en passant connections/edges through the lesioned area
+5. ConnDevAftercut: regenerate connections that are missed upon lesion/node removal introduction
+
+LIF runs the leaky-integrate-and-fire model over the neuronal network that has been built. The desired model can be called in the 'retrieve' section. Parameters for firing model can be defined in this file. 
+
+Demo.mat is a demo file contains the connectivity matrix of an intact sphere with 2000 neurons.
+Demo_SynStrength.mat contains the synaptic strengths between any two nodes
+Demo_Dist.mat includes the arc distances calculated between neurons.
+Demo_Aftercut.mat contains the connectivity matrix of lesioned network with 1900 neurons. Re-formed connections were made under the same rules as developing stage.
+Demo_Aftercut_SynStrength.mat is the synaptic strength matrix post lesion induced sprouting.
+Demo_ExcIndx.mat and Demo_InhIndx contain the indices of excitatory and inhibitory neurons in NbyN matrix respectively.
